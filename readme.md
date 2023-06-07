@@ -1,5 +1,4 @@
-# Traffic Light
-
+# Traffic Light by Tyson
 In this assignment we will be building traffic lights in order to practice using react state.
 
 Let's get this show on the road! ( pun intended )

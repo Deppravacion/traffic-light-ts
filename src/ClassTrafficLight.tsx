@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { getLightColor } from "./utils";
 
 const lightOptions = ['green', 'yellow', 'red']
 export class ClassTrafficLight extends Component {
@@ -15,14 +16,15 @@ export class ClassTrafficLight extends Component {
   }
 
   render() {
+    const currColor = lightOptions[this.state.lightOptionIndex]
     return (
       <div className="traffic-light-box">
         <h2>Class Traffic Light</h2>
         <div className="traffic-light">
           {/* Background color can be black | yellow | red | green */}
-          <div className={lightOptions[this.state.lightOptionIndex] == 'red' ? 'circle red' : 'circle black'}></div>
-          <div className={lightOptions[this.state.lightOptionIndex] == 'yellow' ? 'circle yellow' : 'circle black'}></div>
-          <div className={lightOptions[this.state.lightOptionIndex] == 'green' ? 'circle green' : 'circle black'}></div>
+          <div className={` circle ${getLightColor(currColor, 'red')}`}></div>
+          <div className={` circle ${getLightColor(currColor, 'yellow')}`}></div>
+          <div className={` circle ${getLightColor(currColor, 'green')}`}></div>
         </div>
         <button 
         className="next-state-button"
